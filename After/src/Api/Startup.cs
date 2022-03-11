@@ -18,7 +18,7 @@ namespace Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvc(options => options.EnableEndpointRouting = false);
 
             var config = new Config(3); // Deserialize from appsettings.json
             services.AddSingleton(config);
